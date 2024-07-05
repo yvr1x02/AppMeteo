@@ -1,12 +1,22 @@
+import { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 
 const MyForm = ({ onCityChange }) => {
+  const [city, setCity] = useState("");
+
   const handleCityClick = (newCity) => {
     onCityChange(newCity);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (city.trim() !== "") {
+      onCityChange(city.trim());
+    }
+  };
+
   return (
-    <Form className="container">
+    <Form className="container" onSubmit={handleSubmit}>
       <div className="text-center d-flex justify-content-around m-4">
         <Button variant="outline-primary text-white" onClick={() => handleCityClick("Milano")}>
           Milano
@@ -23,11 +33,11 @@ const MyForm = ({ onCityChange }) => {
       </div>
       <Row className="m-3 align-items-center">
         <Col xs={11}>
-          <Form.Control type="text" placeholder="Enter city name" />
+          <Form.Control type="text" placeholder="Inserisci nome città" value={city} onChange={(e) => setCity(e.target.value)} />
         </Col>
         <Col xs={1}>
           <Button variant="primary" type="submit">
-            Search
+            Cerca
           </Button>
         </Col>
       </Row>

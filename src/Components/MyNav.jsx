@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function MyNav() {
   return (
-    <Navbar className=" navBar bg-body-primary ">
+    <Navbar className=" navBar bg-body-primary border border-1px solid black rounded">
       <Container>
         <Navbar.Brand href="#home" className="text-white">
           MyMeteo

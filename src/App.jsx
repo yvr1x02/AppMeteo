@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyNav from "./Components/MyNav";
 import MyForm from "./Components/MyForm";
 import MyStats from "./Components/MyStats";
+import MyFooter from "./Components/MyFooter";
 
 function App() {
   const [defaultCity, setDefaultCity] = useState("Milano");
@@ -21,6 +22,7 @@ function App() {
           <MyStats defaultCity={defaultCity} />
         </div>
       </div>
+      <MyFooter></MyFooter>
     </>
   );
 }

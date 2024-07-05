@@ -10,3 +10,12 @@ body {
   background-color: #2b374e;
   color: white;
 }
+
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
